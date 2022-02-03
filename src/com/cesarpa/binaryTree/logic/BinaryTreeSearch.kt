@@ -4,9 +4,12 @@ import com.cesarpa.binaryTree.model.Node
 
 class BinaryTreeSearch(var root: Node) {
 
+    fun add(value: Int) = addNodeRecursive(root, value)
+
+
     fun addNodeRecursive(currentNode: Node?, value: Int): Node? {
         if (currentNode == null) {
-            return currentNode
+            return Node(value)
         }
         if (value < currentNode.value) {
             currentNode.left = addNodeRecursive(currentNode.left, value)
