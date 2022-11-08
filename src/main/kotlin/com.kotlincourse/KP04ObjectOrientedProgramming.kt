@@ -15,9 +15,22 @@ class KP04ObjectOrientedProgramming {
 
 }
 // this seems like a class in Kotlin
-class Person{
-    var name: String = "cesar"
-    var age: Int = 29
+// here we create the constructor also we can use the variables passed
+
+class Person(val name:String, var age:Int){
+    var birthYear =  Calendar.getInstance().get(Calendar.YEAR)-age
+
+    // other place when we can modify the attributes from a class is in the init section
+    init {
+        println("The object was created")
+        // also when we mention this is goint to refer the object that we are currently talnking about
+        // then this is ommited by kotlin and you already can use the attributes directly created on the constructor firm
+        //this.name = name
+        //this.age = age
+    }
+
+
+
     override fun toString(): String {
         return "Person(name='$name', age=$age)"
     }
@@ -38,12 +51,12 @@ class Person{
 
 fun main(){
     // Let's create an object from the class person
-    val person = Person()
+    // here we can pass the attributes in the constructor
+    val person = Person("Cesar2", 29)
     println(person.name)
     println(person.age)
 
     // lets change the properties
-    person.name = "andres"
     person.age = 30
 
     println(person)
