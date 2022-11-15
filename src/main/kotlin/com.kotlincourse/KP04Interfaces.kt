@@ -21,7 +21,7 @@ interface Buildable {
 
 // also we can implement multiple interfaces
 // lets create a class that implement that interface
-class Car(val color: String) : Driveable, Buildable {
+class Car(val color: Color) : Driveable, Buildable {
     // here we are following the contract for the interface
     // implement each of the methods/properties
     override fun drive() {
@@ -44,13 +44,13 @@ class Motorcycle() : Driveable {
 }
 
 fun main() {
-    val driveable: Driveable = Car("red")
+    val driveable: Driveable = Car(Color.BLUE)
     driveable.drive()
     // here driveable cannot build -> wrong driveable.build()
     val driveable2: Driveable = Motorcycle()
     driveable2.drive()
 
-    val buildable: Buildable = Car("blue")
+    val buildable: Buildable = Car(Color.RED)
     // as you can notice you can use the default implementation in the interfaces Java8
     buildable.build2()
 }
