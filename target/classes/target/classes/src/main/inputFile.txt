@@ -1,0 +1,4 @@
+when can also be used as a replacement for an
+if-else if chain. If no argument is supplied,
+the branch conditions are simply boolean expressions
+and a branch is executed when its condition is true.
